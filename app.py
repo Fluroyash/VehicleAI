@@ -404,11 +404,17 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "models" / "yolo26n.pt"
 
-
 @st.cache_resource
 def load_model():
-    return YOLO(str(MODEL_PATH))
+    MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
 
+    if not MODEL_PATH.exists():
+        with st.spinner("Downloading YOLO model..."):
+            model = YOLO("yolo26n.pt")
+    else:
+        model = YOLO(str(MODEL_PATH))
+
+    return model
 
 # =========================================================
 # 5. VEHICLE CLASSES
