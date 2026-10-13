@@ -1,0 +1,29 @@
+# Python cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE settings
+.idea/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Generated videos and datasets
+outputs/
+Videos/
+
+# Downloaded model weights
+models/*.pt
+
+# Temporary files
+*.tmp
+
+# Local backup
+app_backup.py

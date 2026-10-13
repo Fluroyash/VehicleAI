@@ -1,0 +1,6 @@
+ultralytics
+opencv-python
+pandas
+matplotlib
+streamlit
+imageio-ffmpeg
